@@ -8,6 +8,51 @@ namespace ConsoleApp2
 {
     public class tests
     {
+      
+        public class StudentDetails
+        {
+            public int ID;
+            public string Name;
+
+            public StudentDetails(string name, int id)
+            {
+                Name = name;
+                ID = id;
+            }
+                    
+            public void setId(int id)
+            {
+                ID = id;
+            }
+            public int getId()
+            {
+                return ID; 
+            }
+                        
+            public void setName(string x)
+            {
+                Name = x;
+            }  
+            public string getName()
+            {
+                return Name(); 
+            }
+                
+            
+        }
+        [TestFixture]
+        public class Program
+        {
+            public string Login()
+            {
+
+            }
+        }
+    }
+        /* public string Concatenation(string a, string b)
+        {
+            return a + b;
+        }
         public string concat(string x, string y)
         {
             string result = x + y;
@@ -28,13 +73,15 @@ namespace ConsoleApp2
         {
             if (x == y) return true;
             return false;
-        }
-    }
-    class Program
+        }  
+    }  
+   
+        class Program
     {
         static void Main(string[] args)
         {
-                       
+           
         }
-    }
+    }*/
+
 }
