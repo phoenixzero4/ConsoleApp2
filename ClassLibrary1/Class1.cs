@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ConsoleApp2;
+using Program;
 using NUnit.Framework;
+
 
 namespace ClassLibrary1
 {
@@ -13,33 +14,27 @@ namespace ClassLibrary1
     public class Class1
     {
         [Test]
-        public void test()
+        public void Test()
         {
-        
-            
-            
-            
-            
-            
-            /*  string a = "Hello";
-            string b = "World!";
-            string x = "HelloWorld!";
-            ConsoleApp2.tests t = new ConsoleApp2.tests();
 
-            a = t.concat(a, b);
-            Assert.AreEqual(x, a);
-
-            string copy = t.cpy(a);
-            Assert.AreEqual(copy, a);
-
-            string empty = "";
-            Assert.AreEqual(t.testEmpty(empty), true);
+            StudentDetails gloria = new StudentDetails();
+            StudentDetails phoenix = new StudentDetails();
+            gloria.setName("gloria");
+            gloria.setId(5555);
             
-            Assert.IsTrue(t.cmpr(a, a));
-            Assert.IsFalse(!t.cmpr(a, a)); 
-              
-           */
+            List<StudentDetails> students = new List<StudentDetails> {
+               new StudentDetails("brodi", 5150),
+               gloria,
+            };
 
+            string a = gloria.Login(gloria, students);
+            Console.WriteLine(a);
+
+            string b = phoenix.Login(phoenix, students); 
+           // Console.WriteLine(gloria.Login(gloria, students));
+            Assert.AreEqual("Welcome " + gloria.getName(),a);
+            Assert.AreEqual("Incorrect Login Credentials", b);       
+         
         }
     }
 }
