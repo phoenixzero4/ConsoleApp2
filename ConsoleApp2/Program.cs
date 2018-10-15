@@ -48,32 +48,26 @@ namespace Program
         return "Incorrect Login Credentials";
     }
 
-    public List<StudentDetails> AllUsers(List<StudentDetails> x)
+    public static List<StudentDetails> AllUsers(List<StudentDetails> x, List<StudentDetails> y)
     {
+            List<StudentDetails> empty = new List<StudentDetails>();
+       
         for (int i = 0; i < x.Count; i++)
         {
              if (x[i].getName() == "" || x[i].getName() == null)
              {
-                 Console.WriteLine("The list contains an empty slot");
+                    Console.WriteLine("The list contains an empty slot");
+                    return empty;
              }
+             if (x[i].getName() != y[i].getName())
+                return empty;
         }
         return x; ;
-
     }        
+
         static void Main(string[] args)
         {
-            StudentDetails gloria = new StudentDetails();
-            StudentDetails phoenix = new StudentDetails();
-            gloria.setName("gloria");
-            gloria.setId(5555);
-
-            List<StudentDetails> students = new List<StudentDetails> {
-               new StudentDetails("brodi", 5150),
-               gloria,
-            };
-
-            string a = gloria.Login(gloria, students);
-            Console.WriteLine(a);
+        
         }
     }
 
